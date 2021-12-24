@@ -1,5 +1,19 @@
+diff --git a/src/vs/workbench/contrib/webview/browser/pre/main.js b/src/vs/workbench/contrib/webview/browser/pre/main.js
+index 16cc137..0718667 100644
+--- a/src/vs/workbench/contrib/webview/browser/pre/main.js
++++ b/src/vs/workbench/contrib/webview/browser/pre/main.js
+@@ -817,7 +817,8 @@ onDomReady(() => {
+                const sandboxRules = new Set(['allow-same-origin', 'allow-pointer-lock']);
+                if (options.allowScripts) {
+                        sandboxRules.add('allow-scripts');
+-                       sandboxRules.add('allow-downloads');
++                       //sandboxRules.add('allow-downloads');
++                       sandboxRules.add('allow-modals');
+                }
+                if (options.allowForms) {
+                        sandboxRules.add('allow-forms');
 diff --git a/src/vs/workbench/contrib/webview/browser/webviewElement.ts b/src/vs/workbench/contrib/webview/browser/webviewElement.ts
-index a85f8dd..dd74aa0 100644
+index a85f8dd..b7a4356 100644
 --- a/src/vs/workbench/contrib/webview/browser/webviewElement.ts
 +++ b/src/vs/workbench/contrib/webview/browser/webviewElement.ts
 @@ -401,7 +401,7 @@ export class WebviewElement extends Disposable implements IWebview, WebviewFindD
