@@ -7,7 +7,7 @@ index a85f8dd..dd74aa0 100644
                 element.name = this.id;
                 element.className = `webview ${options.customClasses || ''}`;
 -               element.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-forms', 'allow-pointer-lock', 'allow-downloads');
-+               element.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-forms', 'allow-pointer-lock', 'allow-downloads', 'alow-modals');
++               element.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-forms', 'allow-pointer-lock', 'allow-downloads', 'allow-modals');
                 if (!isFirefox) {
                         element.setAttribute('allow', 'clipboard-read; clipboard-write;');
                 }
