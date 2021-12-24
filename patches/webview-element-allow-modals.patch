@@ -1,0 +1,13 @@
+diff --git a/src/vs/workbench/contrib/webview/browser/webviewElement.ts b/src/vs/workbench/contrib/webview/browser/webviewElement.ts
+index a85f8dd..dd74aa0 100644
+--- a/src/vs/workbench/contrib/webview/browser/webviewElement.ts
++++ b/src/vs/workbench/contrib/webview/browser/webviewElement.ts
+@@ -401,7 +401,7 @@ export class WebviewElement extends Disposable implements IWebview, WebviewFindD
+                const element = document.createElement('iframe');
+                element.name = this.id;
+                element.className = `webview ${options.customClasses || ''}`;
+-               element.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-forms', 'allow-pointer-lock', 'allow-downloads');
++               element.sandbox.add('allow-scripts', 'allow-same-origin', 'allow-forms', 'allow-pointer-lock', 'allow-downloads', 'alow-modals');
+                if (!isFirefox) {
+                        element.setAttribute('allow', 'clipboard-read; clipboard-write;');
+                }

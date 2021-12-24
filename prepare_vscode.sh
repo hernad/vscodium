@@ -34,12 +34,6 @@ done
 
 set -x
 
-if [[ "$OS_NAME" == "osx" ]]; then
-  CHILD_CONCURRENCY=1 yarn --frozen-lockfile --ignore-optional
-  npm_config_argv='{"original":["--ignore-optional"]}' yarn postinstall
-else
-  CHILD_CONCURRENCY=1 yarn --frozen-lockfile
-fi
 
 mv product.json product.json.bak
 
@@ -112,5 +106,14 @@ if [[ "$OS_NAME" == "linux" ]]; then
   # snapcraft.yaml
   sed -i 's|Visual Studio Code|VSCodium|'  resources/linux/rpm/code.spec.template
 fi
+
+
+
+#if [[ "$OS_NAME" == "osx" ]]; then
+#  CHILD_CONCURRENCY=1 yarn --frozen-lockfile --ignore-optional
+#  npm_config_argv='{"original":["--ignore-optional"]}' yarn postinstall
+#else
+#  CHILD_CONCURRENCY=1 yarn --frozen-lockfile
+#fi
 
 cd ..
